@@ -16,7 +16,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f9f9f9;
+            background-color: #f4f7fa;
             font-family: Arial, sans-serif;
         }
         .frame-container {
@@ -38,8 +38,8 @@
         iframe {
             width: 100%;
             height: 100%;
-            border: 1px solid #ddd;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
         }
         .submenu {
             display: flex;
@@ -49,30 +49,36 @@
             text-align: center;
         }
         .submenu button {
-            padding: 10px 15px;
+            padding: 12px 18px;
             font-size: 16px;
             border: none;
             color: white;
             cursor: pointer;
-            border-radius: 5px;
-            width: 300px;
+            border-radius: 6px;
+            width: 320px;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
-        /* Estilo específico para cada botón */
-        .submenu button:first-child { 
-            background-color: #007bff; /* Azul */
+        .submenu button:nth-child(1) {
+            background-color: #007bff;
         }
-        .submenu button:first-child:hover { 
-            background-color: #0056b3; /* Azul más oscuro en hover */
+        .submenu button:nth-child(1):hover {
+            background-color: #0056b3;
         }
-        .submenu button:last-child { 
-            background-color: #00b371; /* Verde */
+        .submenu button:nth-child(2) {
+            background-color: #00b371;
         }
-        .submenu button:last-child:hover { 
-            background-color: #008f5a; /* Verde más oscuro en hover */
+        .submenu button:nth-child(2):hover {
+            background-color: #008f5a;
+        }
+        .submenu button:nth-child(3) {
+            background-color: #ff9800;
+        }
+        .submenu button:nth-child(3):hover {
+            background-color: #e68900;
         }
         #onboardingFrame {
-            display: none; /* Oculto hasta que el usuario haga clic */
+            display: none;
         }
     </style>
 </head>
@@ -89,10 +95,10 @@
                 </button>
                 <button onclick="cambiarOnboarding('https://calendly.com/d/cqpf-9cx-7y4/onboarding')">
                     ONBOARDING COMPLETO - ALUMNOS QUE NECESITEN TEST DE POSICIONAMIENTO
-                </button> 
+                </button>
                 <button onclick="cambiarOnboarding('https://calendly.com/bestworkenglishinstitute/onboarding-orientacion')">
                     ONBOARDING DE ORIENTACION - ALUMNOS QUE NECESITAN UN TRATO ESPECIAL O ACUSAN NO SABER USAR EL SISTEMA
-                </button> 
+                </button>
             </div>
 
             <!-- Iframe para cargar el link después de la selección -->
@@ -102,10 +108,10 @@
 
     <script>
         function cambiarOnboarding(url) {
-            document.getElementById("submenu").style.display = "none"; // Ocultar botones
+            document.getElementById("submenu").style.display = "none";
             let iframe = document.getElementById("onboardingFrame");
             iframe.src = url;
-            iframe.style.display = "block"; // Mostrar el iframe
+            iframe.style.display = "block";
         }
     </script>
 </body>
